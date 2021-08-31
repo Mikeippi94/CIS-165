@@ -1,23 +1,34 @@
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char** argv) 
-{
-	char one [20] = "      *  ";
-	char two [20] ="     *** ";
-	char three [20] ="    ***** ";
-	char four [20] = "   ******* ";
-	char five [20] ="    ***** ";
-	char six [20] ="     *** ";
-	char seven [20] = "      *  ";
+int main(int argc, char** argv) {
 	
-	cout << one << endl;
-	cout << two << endl;
-	cout << three << endl;
-	cout << four << endl;
-	cout << five << endl;
-	cout << six << endl;
-	cout << seven << endl;
+	double acre;
+	double assess;
+	double tax;
+	double sen;
+	double sum1;
+	double quart;
+	
+	acre = 0;
+	sen = 5000;
+	
+	cout << "What is total property value: " <<endl;
+	cin >> acre;
+	
+	
+	assess = acre * .60;
+	sum1 = assess - sen;
+	tax = sum1 * 0.0264;
+	quart = tax/4;
+	
+	cout << "Assessment: " << fixed << setprecision(2) << setw(9) << "$" << assess << endl;
+	cout << "Property Tax: "<< fixed << setprecision(2) << setw(10) << "$" << tax << endl;
+	cout << "Quartly Property Tax: "<< fixed << setprecision(2) << setw(10) << "$" << quart << endl;
+	
 	return 0;
 }

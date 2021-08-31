@@ -1,25 +1,29 @@
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char** argv) 
-{
-	float share;
-	float price;
-	float com;
-	float sum;
-	float comission;
-	float total;
+int main(int argc, char** argv) {
+
+	double num1;
+	double num2;
+	double num3;
 	
-	share = 750;
-	price = 35.00;
-	com = .02;
-	sum = share * price;
-	comission = sum * com;
-	total = sum + comission;
+	num1 = 0;
+	num2 = 0;
 	
-	cout << "Ammount paid for stock: $" << sum << endl;
-	cout << "Ammount paid for comission: $" << comission << endl;
-	cout << "Total: $" << total << endl;	
+	cin >> num1;
+	cout << "+";
+	cin >> num2;
+	cout << "______" << endl;
+	
+	num3 = num1 +num2;
+	
+	cout << num3 << endl;
+	
+	 
+
 	return 0;
 }
