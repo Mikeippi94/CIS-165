@@ -1,39 +1,74 @@
 #include <iostream>
-#include <iomanip>
+#include <fstream>
 using namespace std;
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+const int ROWS = 7;
+int main(int argc, char** argv)
+ {
+	int numbers[ROWS];
+	int max;
+	int maxidx;
+	int min;
+	int minidx;
+	int average;
+	int total;
+	ifstream inFile;
+	int number;
+	
+	inFile.open("d:\\devc++\Chapter 7\numbers.txt");
+	
+	
+	if(inFile.fail())
+	{
+		cout << "Your file didnt work" << endl;
+	}
+	else
+	{
+		inFile >> number;
+	}
+	inFile.close();
+/*	for(int i = 0; i < ROWS; i++)
+	{
+	
+	
+		while(inFile >> numbers[ROWS])
+			{
+			inFile >> numbers[number];
+			if(i == 0) 
+			{
+				max = numbers[i];
+				maxidx = i;
+			}
+			if(numbers[i] > max)
+			{
+				max = numbers[i];
+				maxidx = i;	
+			}	
+			if(i == 0) 
+			{
+				min = numbers[i];
+				minidx = i;
+			}
+			if(numbers[i] < min)
+			{
+				min = numbers[i];
+				minidx = i;
+			}	
+			total = total + numbers[i];			
+	
+			}	
+	}
+	inFile.close();
+	
+	average = total /7;
+	
+	cout << "Highest number: " << max << endl;
+	cout << "Lowest number: " << min << endl;
+	cout << "Average: " << average << endl;
+	cout << "Total: " << total << endl;
+*/	
 
-int main(int argc, char** argv) {
-	
-	int days;
-	float penny;
-	float sum;
 
-	
-
-	cout << "How many days did you work? " << endl;
-	cin >> days; 
-	cout << endl;
-	
-	cout << "Days " << "  " << "Salary per day " << endl;
-	
-	while (0 < days )
-    {
-      	
-      penny = .01;
-      while (penny > 0  && 0 < days )
-        {
-          cout << days << "       " << fixed << setprecision(2) <<  sum << endl;
-          days--;
-    
-		  sum = sum + penny;
-          penny+=0.01;
-          
-        }
-    }
-	cout <<"Total salary: $" << fixed << setprecision(2)<< sum << endl;
-	
-	
-	
 	return 0;
 }
