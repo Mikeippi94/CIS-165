@@ -1,47 +1,59 @@
 #include <iostream>
 #include <iomanip>
-#include <fstream>
-
+#include <string.h>
 using namespace std;
+ 
+int main(int argc, char *argv[])
+{
+ 
+int students;
+int count;
+char names[25];
+char first [25];
+char last [25];
+ 
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+cout << "Enter in the number of students in the class: \n";
+cin >> students;
+if(students < 26 && students > 0)
+{
 
-int main(int argc, char** argv) {
-
-	char mon[20];
-	char year[20];
-	double tot;
-	double sale;
-	double count;
-	double state;
-	double tot2;
+for(count = 1; count < students; count++)
+{
 	
-	tot = 0;
-	
-	
-
-	
-	
-	cout << "Month: ";
-	cin >> mon;
-	cout << " Year: ";
-	cin >> year;
-	cout << "Total collected: ";
-	cin >> tot;	
-	
-	
-	count = tot *.02;
-	state = tot *.04;	
-	tot2 = count + state;
-	sale = tot - tot2;
-	
-	cout << "Month: " << mon << endl;
-	cout << "Year: " << year << endl;
-	cout << "----------------------" << endl;
-	cout <<"Total Collected: " << fixed << setprecision(2) <<setw(9) << "$ " << setw(9) << tot << endl;
-	cout <<"Sales: " << fixed << setprecision(2) << setw(19) << "$ " << setw(9) << sale << endl;
-	cout <<"County Sales Tax: " << fixed << setprecision(2) << setw(8) << "$ "   << setw(9) << count << endl;
-	cout <<"State Sales Tax: " << fixed << setprecision(2) << setw(9) << "$ "  << setw(9) << state << endl;
-	cout <<"Total Sales Tax: " << fixed << setprecision(2) << setw(9) << "$ " << setw(9) << tot2 << endl;
-	return 0;
 }
+cin.ignore(25,'\n');
+ 
+for (int count = 1; count <= students; count++)
+{
+cout << "Enter in name " << count << ": \n";
+cin.getline(names, 25);
+ 
+ 
+	if (count == 1)
+	{
+  		strcpy(first, names);
+  		strcpy(last, names);
+	}
+	
+	if(strcmp(names,first) < 0)
+	{
+		strcpy(first, names);
+	}
+
+	if(strcmp(names,last) > 0) 
+	{ 
+		strcpy(last, names);
+	}
+}
+} 
+cout << "The first student is " << first << endl;
+ 
+cout << "The last student is " << last << endl;
+ 
+ 
+
+return 0;
+
+}
+ 

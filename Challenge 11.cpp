@@ -1,46 +1,63 @@
 #include <iostream>
 #include <iomanip>
-#include <fstream>
 
 using namespace std;
-
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
 	
-	double loan;
-	double insur;
-	double gas;
-	double oil;
-	double tires;
-	double main;
-	double tot;
-	double anu;
 	
-	loan = 0;
-	insur = 0;
-	gas = 0;
-	tires =  0;
-	main = 0;
-
+	double org;
+	float average;
+	double days;
+	float sum;
+	float sum1;
+	double sum2;
 	
-	cout << "How much is your loan payment: " << endl;
-	cin >> loan;
-	cout << "How much is your insurance payment: " << endl;
-	cin >> insur;
-	cout << "How much is your gas payment: " << endl;
-	cin >> gas;
-	cout << "How much is your oil payment: " << endl;
-	cin >> oil;
-	cout << "How much is your tire payment: " << endl;
-	cin >> tires;
-	cout << "How much is your maintanice payment: " << endl;
-	cin >> main;
+	cout << "What is the starting number of organisms: ";
+	cin >> org;
+	cout << endl;
+	cout << "What is their daily polulation increase (as a percentage)? ";
+	cin >> average;
+	cout << endl;
+	cout << "What is the total number of days they will multiply? ";
+	cin >> days;
+	cout << endl;
 	
-	tot = loan + insur + gas + oil + tires + main;
-	anu = tot * 12;
+	sum2 = average/100;
 	
-	cout << "total montly cost: " << fixed << setprecision(2) << "$" << tot << endl;
-	cout << "total annual cost: " << fixed << setprecision(2) << "$" << anu << endl; 
+	cout << "Number of Organisms: " << fixed << setprecision(2) << org << endl;
+	cout << "Average growth: " << fixed << setprecision(0) << average << "%" << endl;
+	cout << "day(s): " << fixed << setprecision(0) << days << endl;
+	
+	
+	do
+	{
+		
+		sum1 = sum2*org;
+		do
+		{
+			sum = sum1 + org;
+			org+=sum1; 
+			
+		}
+		while(++org > org);
+	
+		days--;
+		if (days > 0)
+		{
+			cout << "Number of Organisms: " << fixed << setprecision(2) << org << endl;
+			cout << "Average growth: " << fixed << setprecision(0) << average << "%" << endl;
+			cout << "day(s): " << fixed << setprecision(0) << days << endl; 	
+		}
+		else 
+		{
+			cout << endl;
+		}
+	}
+	while(days > 0);
+	
+	
+	
 	return 0;
 }

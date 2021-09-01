@@ -4,50 +4,103 @@
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+const int MINUS= 2;
+const int ADD= 1;
+const  int MULTIPLY= 3;
+const int DIVIDE= 4;
+const int QUIT = 5;
 int main(int argc, char** argv) {
 	
-	float nickel;
-	float dime;
-	float penny;
-	float quarter;
-	int sum;
-	float sum1;
-	float sum2;
-	float sum3;
-	float sum4; 
-	
-	cout << " How many quarters?: ";
-	cin >> quarter;
-	cout << endl;
-	cout << " How many dimes?: ";
-	cin >> dime;
-	cout << endl;
-	cout << " How many nickels?: ";
-	cin >> nickel;
-	cout << endl;
-	cout << " How many pennys?: ";
-	cin >> penny;
-	cout << endl;
-	
-	sum1 = quarter * .25;
-	sum2 = dime * .10;
-	sum3 = nickel * .05;
-	sum4 = penny * .01;
-	
-	sum = sum1 + sum2 + sum3 + sum4;
-	cout << sum;
-	if(sum = 1)
-	{
-		cout << "Congradulations you win " <<endl;
-	} 
-	else if( sum > 1)
-	{
-		cout << " You have entered more than a dollar" << endl;
-	}
-	else
-	{
-		cout << "You have entered less than a dollar" << endl;
-	}
 
+	int num1 = 20;
+	int num2 = 5;
+	int sum1;
+	int sum2;
+	int choice;
+	
+	
+	do
+	{
+	cout << "Math Menu "<< endl;
+	cout << " 1. Addition " << endl;
+	cout << " 2. subtraction " << endl;
+	cout << " 3. Multiplacation " << endl;
+	cout << " 4. Division " << endl;
+	cout << " 5. Quit Program " << endl;
+	cout << "enter your choice " << endl;
+	cin >> choice;
+	cout << endl;
+	
+		while(choice < ADD || choice > QUIT)
+		{
+		cout << "*** ERROR ***" << endl;
+		cout << "Math Menu "<< endl;
+		cout << " 1. Addition " << endl;
+		cout << " 2. subtraction " << endl;
+		cout << " 3. Multiplacation " << endl;
+		cout << " 4. Division " << endl;
+		cout << " 5. Quit Program " << endl;
+		cout << "enter your choice " << endl;
+		cin >> choice;
+		cout << endl;
+		}
+		
+	if(choice != QUIT)
+	{
+		
+		switch(choice)
+		{
+		
+			case ADD:
+	
+				sum1 = num1 + num2;
+				cout << "   "<< num1 << endl;
+				cout << "+  " << num2 << endl;
+				cout << "------------" << endl;
+				break;
+			case MINUS:
+			
+				sum1 = num1 - num2;
+				cout << "   "<< num1 << endl;
+				cout << "-  " << num2 << endl;
+				cout << "------------" << endl;
+				break;
+	
+			case MULTIPLY:
+	
+				sum1 = num1 * num2;
+				cout << "   "<< num1 << endl;
+				cout << "*  " << num2 << endl;
+				cout << "------------" << endl;
+				break;
+				
+			case DIVIDE:
+	
+				sum1 = num1 / num2;
+				cout << "   "<< num1 << endl;
+				cout << "/ " << num2 << endl;
+				cout << "------------" << endl;
+				cin >> sum2;
+				cout << endl;
+				break;
+			
+		
+	    }
+	    	
+				cin >> sum2;
+				if(sum2 == sum1)
+				{
+				cout << " ***This is the correct answer*** " << endl;
+				}
+				else
+				{
+				cout << " The correct asnwer is: " << sum1 << endl;
+				}
+	}
+	
+	}while(choice != QUIT); 
+	
+	
 	return 0;
+
 }

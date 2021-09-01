@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
@@ -7,25 +6,44 @@ using namespace std;
 
 int main(int argc, char** argv) {
 	
-	double bag;
-	double serv1;
-	double serv;
-	double cal;
-	double cook;
-	double total;
-	double tot;
+	int floor;
+	int rooms;
+	int guest;
+	int empty;
+	int sum;
+	int sum1;
+	float sum2;
 	
-	bag = 30;
-	serv = 10;
-	cal = 300;
-	
-	cout << "How many cookies did you eat?: " << endl;
-	cin  >> cook;
-	serv1= bag/serv;
-	total = cal/serv1;
-	tot = cook * total;
-	cout << "Total amount of calories: " << tot << endl;
+	cout << "How many floors " << endl;
+	cin >> floor; 
+	cout << endl;
 	
 	
+	
+	while (floor > 0 )
+    {
+      	
+      rooms = 11;
+      while (rooms > 10  && 0 < floor )
+        {
+          cout << "How many rooms on this floor:" << endl;
+		  cin >> rooms;
+		  sum = sum + rooms;
+		  cout << "Floor Nummber: " << floor << "       " << "Room NUmber: " <<  rooms << endl;
+		  cout << "How many rooms are occupied: " << endl;
+		  cin >> guest;
+			
+		  
+		  floor--;
+    
+        }
+    }
+    sum2 = sum1/sum;
+    sum1 = sum1 + guest;
+    empty = sum1 - sum;
+	cout << "Total number of rooms: " << sum << endl;
+	cout << "Total number of Unoccupied rooms: " << empty << endl;
+	cout << "Total number of occupied rooms: " << sum1 << endl;
+	cout << "Total precentage occupied: " << sum2 << "%" << endl;
 	return 0;
 }
